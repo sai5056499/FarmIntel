@@ -1,0 +1,254 @@
+/* src/components/WeatherReport/WeatherReport.css */
+
+/* Assuming variables like --primary-color, etc., are defined globally or in a parent CSS file */
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+    --primary-color: #3F72AF; /* Example */
+}
+
+.weather-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    /* background: linear-gradient(160deg, #112D4E 0%, #3F72AF 100%); */
+    /* background-color: var(--colorLight1); */ /* Simple background */
+    border-radius: 10px;
+    /* box-shadow: 0 5px 15px rgba(0,0,0,0.1); */
+    color: var(--colorDark1);
+    text-align: center;
+    border: 1px solid #ccc; /* Add a border for visibility */
+}
+
+.weather-container h1 {
+    margin-bottom: 1.5rem;
+    color: var(--colorDark1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto 1rem auto;
+    /* border: 1px solid red; */
+}
+
+.tab {
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+    user-select: none; /* Prevent text selection */
+    color: var(--colorDark2);
+}
+
+.tab.current-tab {
+    background-color: rgba(219, 226, 239, 0.5); /* Light background for active */
+    font-weight: bold;
+}
+
+.weather-content {
+    position: relative; /* Needed for absolute positioning of children if required */
+    min-height: 300px; /* Give some default height */
+    display: flex; /* Use flex to manage child visibility */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content by default */
+}
+
+.sub-container {
+    display: none; /* Hide all sub-containers by default */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+    width: 100%; /* Take full width */
+}
+
+.sub-container.active {
+    display: flex; /* Show only the active sub-container */
+}
+
+
+/* Grant Access Container */
+.grant-location-container p:first-of-type {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+.grant-location-container p:last-of-type {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+
+/* Generic Button Style */
+.btn {
+    all: unset; /* Reset browser defaults */
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--colorLight2);
+    cursor: pointer;
+    padding: 10px 30px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s ease;
+}
+.btn:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+
+/* Search Form */
+.form-container {
+    /* display: none; */ /* Handled by .active class */
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto 1rem auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px; /* Flex gap */
+    /* margin-bottom: 3rem; */
+    flex-direction: row; /* Override default column */
+}
+
+/* .form-container.active {
+    display: flex;
+} */
+
+.form-container input {
+    all: unset;
+    flex-grow: 1; /* Allow input to take available space */
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+    color: var(--colorDark1);
+}
+.form-container input::placeholder {
+    color: rgba(17, 45, 78, 0.7);
+}
+.form-container input:focus {
+    outline: 3px solid rgba(219, 226, 239, 0.7);
+}
+
+/* Search button specific adjustments */
+.form-container .btn {
+    padding: unset; /* Override generic padding */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%; /* Make it circular */
+    margin-bottom: 0; /* Override generic margin */
+    background-image: url('./assets/images/search.png'); /* Use search icon */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px; /* Adjust icon size */
+}
+
+
+/* Loading container */
+.loading-container p {
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+/* Error container */
+.err p {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: red;
+}
+
+/* User Weather Info Container */
+.user-info-container {
+    /* display: none; */ /* Handled by .active class */
+    margin: 1rem 0;
+    width: 90%;
+    max-width: 550px;
+}
+/* .user-info-container.active {
+    display: flex;
+} */
+
+.name {
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 0.5rem;
+    justify-content: center; /* Center name and flag */
+}
+.name p {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.name img {
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+}
+
+[data-weatherDesc] {
+    font-size: 1.25rem;
+    font-weight: 200;
+    text-transform: capitalize;
+    margin-top: -5px; /* Adjust spacing */
+}
+[data-weatherIcon] {
+    width: 90px;
+    height: 90px;
+    margin: 0.5rem 0;
+}
+[data-temp] {
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+.parameter-container {
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    gap: 10px 20px; /* Row and column gap */
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.parameter {
+    width: 30%;
+    max-width: 200px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px 0;
+    min-width: 120px; /* Ensure minimum width */
+}
+.parameter img {
+    width: 50px;
+    height: 50px;
+}
+.parameter p:first-of-type {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.parameter p:last-of-type {
+    font-size: 1rem;
+    font-weight: 200;
+}

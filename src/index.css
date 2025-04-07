@@ -1,0 +1,186 @@
+/* src/index.css */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;600;700&display=swap");
+
+/* --- CSS Variables (Theme) --- */
+:root {
+    /* Colors */
+    --primary-green: hsl(110, 45%, 50%);
+    --primary-green-dark: hsl(110, 45%, 40%);
+    --secondary-blue: hsl(210, 50%, 55%);
+    --accent-orange: hsl(106, 60%, 52%);
+    --accent-orange-dark: hsl(216, 84%, 61%);
+
+    /* Text Colors */
+    --title-color: hsl(210, 25%, 15%);
+    --text-color: hsl(210, 18%, 28%);
+    --text-color-light: hsl(210, 15%, 45%);
+    --border-color: hsl(210, 20%, 88%);
+    --white-color: #fff;
+    --footer-bg: hsl(210, 20%, 20%);
+    --footer-text: hsl(210, 15%, 85%);
+
+    /* Glass Box Style Variables */
+    --glass-bg-color: hsla(0, 0%, 100%, 0.65); /* White with 65% opacity */
+    --glass-border-color: hsla(0, 0%, 100%, 0.4);
+    --glass-shadow: 0 6px 20px hsla(0, 0%, 0%, 0.1);
+    --glass-blur: 8px;
+
+    /* Typography */
+    --body-font: "Lato", sans-serif;
+    --heading-font: "Montserrat", sans-serif;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+
+    /* Font Weight */
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /* Layout */
+    --header-height-mobile: 3.5rem;
+    --header-height-desktop: 4.5rem;
+    --max-width: 1200px;
+    --border-radius: 8px; /* Glass border radius */
+
+    /* z-index */
+    --z-fixed: 100;
+    --z-modal: 110;
+    --z-background-overlay: -1;
+    --z-background-image: -2;
+}
+
+/* --- Base Reset & Styles --- */
+* { box-sizing: border-box; padding: 0; margin: 0; }
+html { scroll-behavior: smooth; font-size: 100%; }
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-top: var(--header-height-mobile);
+    min-height: 100vh;
+    position: relative;
+
+    /* --- Background Image --- */
+    background-image: url('bg-image.png'); /* ADJUST PATH */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* --- Background Overlay --- */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.2); /* Adjust overlay darkness */
+    z-index: var(--z-background-overlay);
+    pointer-events: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    line-height: 1.3;
+}
+h1 { font-size: var(--h1-font-size); }
+h2 { font-size: var(--h2-font-size); }
+h3 { font-size: var(--h3-font-size); }
+
+ul { list-style: none; }
+a { text-decoration: none; color: var(--secondary-blue); }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; height: auto; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; }
+input, select, textarea { font-family: inherit; font-size: inherit; }
+
+/* Ensure main content area stacks correctly */
+#root {
+    position: relative;
+    z-index: 1;
+}
+
+.main-content {
+    min-height: calc(100vh - var(--header-height-mobile) - 5rem); /* Adjust footer height estimate if needed */
+    padding: 1.5rem 0;
+    position: relative; /* Ensure content stays above pseudo-element */
+    z-index: 1;
+}
+
+/* --- Reusable Glass Box Style --- */
+.glass-box {
+    background: var(--glass-bg-color);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border-color);
+    border-radius: var(--border-radius);
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Ensure inputs inside glass are readable */
+.glass-box input,
+.glass-box select,
+.glass-box textarea {
+    background-color: var(--white-color); /* Solid background for inputs */
+}
+
+
+/* --- Base Button Styles (CTAs) --- */
+.cta-button, .feature-link, .scheme-link-button, .predict-button, .service-link-button {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--border-radius);
+    font-weight: var(--font-medium);
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: var(--accent-orange);
+    color: var(--white-color);
+    border: none;
+    font-size: var(--normal-font-size);
+    text-decoration: none;
+}
+.cta-button:hover, .feature-link:hover, .scheme-link-button:hover, .predict-button:hover, .service-link-button:hover {
+    background-color: var(--accent-orange-dark);
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: var(--white-color);
+}
+.cta-button:disabled, .predict-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed; transform: none;
+}
+/* ... other button styles ... */
+
+/* General container for centering content */
+.container {
+    max-width: var(--max-width);
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+@media screen and (min-width: 1024px) {
+    .container { margin-left: auto; margin-right: auto; }
+}
+
+/* --- Responsive Adjustments --- */
+@media screen and (min-width: 768px) {
+    body { padding-top: var(--header-height-desktop); }
+    .main-content { min-height: calc(100vh - var(--header-height-desktop) - 5rem); }
+    .glass-box { padding: 2.5rem 2rem; }
+    :root {
+        --h1-font-size: 3rem;
+        --h2-font-size: 2rem;
+        --h3-font-size: 1.5rem;
+        --normal-font-size: 1.05rem;
+    }
+}

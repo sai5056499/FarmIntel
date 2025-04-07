@@ -1,0 +1,133 @@
+/* src/components/Home/Home.css */
+
+/* Assuming variables defined globally */
+
+.home-container {
+  max-width: var(--max-width); /* Standard width */
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Standard padding */
+}
+
+/* Hero Section */
+.home-hero {
+  padding: 4rem 0; /* Adjust vertical padding */
+  text-align: center;
+}
+
+.hero-content.glass-box {
+  /* Glass styles applied by global .glass-box */
+  max-width: 850px; /* Limit width of hero text */
+  margin: 0 auto; /* Center the glass box */
+  /* Override default glass padding if needed */
+  /* padding: 3rem 2rem; */
+  /* Ensure text color contrasts with glass/background */
+  color: var(--title-color); /* Adjust if using dark glass */
+}
+.hero-content.glass-box h1,
+.hero-content.glass-box p {
+   color: inherit; /* Inherit from .glass-box setting */
+}
+
+
+.hero-content h1 {
+  font-size: var(--h1-font-size);
+  margin-bottom: 1rem;
+  /* color: var(--title-color); Already set by glass-box */
+}
+
+.hero-content .subtitle {
+  font-size: 1.2rem;
+  color: var(--text-color-light); /* Lighter text for subtitle */
+  margin-bottom: 1.5rem;
+  font-weight: var(--font-regular);
+}
+
+.hero-content p:not(.subtitle) {
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  /* color: var(--text-color); Already set by glass-box */
+}
+
+/* Features Section */
+.home-features {
+  padding: 3rem 0;
+}
+
+.section-title { /* Optional heading above grid */
+  text-align: center;
+  font-size: var(--h2-font-size);
+  margin-bottom: 2.5rem;
+  /* Use light color if background is dark, dark if light */
+  color: var(--white-color); /* Example for dark background overlay */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4); /* Add shadow for readability */
+}
+
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card.glass-box {
+  /* Glass styles applied by global .glass-box */
+  text-align: center;
+  /* Remove previous background/border/shadow */
+  /* padding: 2rem 1.5rem; Set by glass-box */
+   color: var(--title-color); /* Adjust if using dark glass */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.feature-card.glass-box h3,
+.feature-card.glass-box p,
+.feature-card.glass-box i {
+  color: inherit;
+}
+
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--primary-green); /* Or accent color */
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  font-size: var(--normal-font-size);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Make text fill space */
+}
+
+.feature-link {
+  margin-top: auto; /* Push button to bottom */
+}
+
+/* How We Help Section */
+.how-we-help.glass-box {
+  /* Glass styles applied by global .glass-box */
+  margin: 4rem auto; /* More spacing */
+  max-width: 900px;
+  text-align: center;
+  /* padding: 2.5rem 2rem; Set by glass-box */
+   color: var(--title-color); /* Adjust if using dark glass */
+}
+.how-we-help.glass-box h2,
+.how-we-help.glass-box p {
+  color: inherit;
+}
+
+.how-we-help h2 {
+  font-size: var(--h2-font-size);
+  margin-bottom: 1rem;
+}
+
+.how-we-help p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}

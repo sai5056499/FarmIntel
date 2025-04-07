@@ -1,0 +1,8 @@
+/* src/components/Navbar/Navbar.scss */
+@import '../../config/_variables.scss'; // Corrected path
+@import '../../base/_base.scss';       // Corrected path
+// @import 'layout/layout';     // No explicit layout.scss in this Navbar, but if needed
+@import '../../_header.scss';  // Corrected path
+@import '../../_search.scss';  // Corrected path
+@import '../../_login.scss';   // Corrected path
+@import '../../_breakpoints.scss'; // Corrected path

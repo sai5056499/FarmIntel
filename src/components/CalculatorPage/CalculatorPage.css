@@ -1,0 +1,51 @@
+/* src/components/CalculatorPage/CalculatorPage.css */
+
+.calculator-page-container {
+    max-width: 1400px; /* Wider container for grid */
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    font-family: var(--body-font); /* Ensure font is inherited */
+}
+
+.calculator-page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color, #eee);
+}
+
+.calculator-page-header h1 {
+    font-size: 2.5rem;
+    color: var(--title-color);
+    margin-bottom: 0.75rem;
+    font-weight: var(--font-semi-bold, 600);
+}
+
+.calculator-page-header p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.calculators-grid {
+    display: grid;
+    /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* Adjust min width */
+    gap: 2rem; /* Space between calculator cards */
+}
+
+ /* Media query for potentially forcing 3 columns on larger screens */
+@media screen and (min-width: 1200px) {
+    /* Example: Force 3 columns if needed */
+    /* .calculators-grid {
+        grid-template-columns: repeat(3, 1fr);
+    } */
+}
+@media screen and (min-width: 1600px) {
+     /* Example: Force 4 columns on very large screens */
+    /* .calculators-grid {
+        grid-template-columns: repeat(4, 1fr);
+    } */
+}

@@ -1,0 +1,73 @@
+/* src/components/AboutUs/AboutUs.css */
+
+/* Assuming variables (--primary-green, --title-color, --text-color, etc.) are defined globally in index.css */
+
+.about-us-container {
+    max-width: 900px; /* Centered content area */
+    margin: 3rem auto; /* Vertical spacing */
+    padding: 1rem 1.5rem; /* Horizontal padding */
+    font-family: var(--body-font);
+}
+
+.about-us-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.about-us-header h1 {
+    font-family: var(--heading-font);
+    font-size: var(--h1-font-size);
+    color: var(--primary-green); /* Use primary color for emphasis */
+    margin-bottom: 0.5rem;
+    font-weight: var(--font-bold);
+}
+
+.about-us-header .subtitle {
+    font-size: 1.15rem; /* Slightly larger than body */
+    color: var(--text-color-light);
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto; /* Center subtitle if needed */
+}
+
+.about-section {
+    margin-bottom: 3rem; /* Space between sections */
+}
+
+.about-section h2 {
+    font-family: var(--heading-font);
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--primary-green); /* Underline heading */
+    display: inline-block; /* Keep border only under text */
+    font-weight: var(--font-semi-bold);
+}
+
+.about-section p {
+    font-size: var(--normal-font-size);
+    line-height: 1.75; /* Generous line height for readability */
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+/* Style for optional images within sections */
+.about-image {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.1);
+}
+
+/* Responsive adjustments if needed */
+@media screen and (max-width: 768px) {
+    .about-us-header h1 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+}
