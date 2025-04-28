@@ -49,7 +49,7 @@ body {
   min-height: 100vh;
   width: 100%;
   /* background: url('https://i.postimg.cc/FzYpjZBB/download-1.png') no-repeat center center fixed; */
-  background: url('https://i.postimg.cc/Nj71PWYq/bg-image.png') no-repeat center center fixed;
+  background: url('bg-image.png') no-repeat center center fixed;
   
   background-size: cover;
   position: relative;
