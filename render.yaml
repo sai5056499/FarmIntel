@@ -3,7 +3,7 @@ services:
   - type: web
     name: farmintel-backend
     env: python
-    plan: free
+    plan: starter
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
     envVars:
@@ -12,10 +12,8 @@ services:
     healthCheckPath: /health
 
   # Frontend Service
-  - type: web
+  - type: static
     name: farmintel-frontend
-    env: static
-    plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
     envVars:
