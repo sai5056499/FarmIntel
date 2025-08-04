@@ -1,0 +1,23 @@
+services:
+  # Backend API Service
+  - type: web
+    name: farmintel-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.1
+    healthCheckPath: /health
+
+  # Frontend Service
+  - type: web
+    name: farmintel-frontend
+    env: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://farmintel-backend.onrender.com 

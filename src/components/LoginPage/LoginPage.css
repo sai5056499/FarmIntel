@@ -1,0 +1,154 @@
+/* src/components/LoginPage/LoginPage.css */
+
+.login-page-container {
+    /* This container helps center the form vertically and horizontally */
+    /* Flex properties are moved from body to here */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 70px); /* Adjust 70px based on your actual Navbar height */
+    padding: 20px 10px; /* Add some padding */
+  }
+  
+  
+  .wrapper {
+    width: 400px;
+    max-width: 95%; /* Ensure it doesn't overflow on small screens */
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    /* Glassmorphism effect - keep it subtle */
+    background: rgba(10, 30, 10, 0.2); /* Darker, slightly green tint */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px); /* Slightly adjust blur if needed */
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* Slightly stronger shadow */
+    transition: all 0.3s ease;
+    z-index: 1; /* Ensure wrapper is above body::before */
+  }
+  
+  .wrapper:hover {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+  }
+  
+  .wrapper form { /* Target form inside wrapper */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .wrapper h2 { /* Target h2 inside wrapper */
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #ffffff; /* White text for contrast */
+    letter-spacing: 1px;
+  }
+  
+  .input-field {
+    position: relative;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4); /* Slightly more opaque border */
+    margin: 20px 0;
+  }
+  
+  .input-field label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.8); /* Slightly softer white */
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.3s ease;
+  }
+  
+  .input-field input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #ffffff; /* White input text */
+    padding: 0 5px; /* Adjusted padding slightly */
+  }
+  
+  /* Style placeholders specifically if needed */
+  .input-field input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+      opacity: 1; /* Firefox */
+  }
+  
+  .input-field input:focus~label,
+  .input-field input:valid~label {
+    font-size: 0.9rem;
+    top: 10px; /* Adjust if needed based on line-height */
+    transform: translateY(-120%); /* Adjusted for better positioning */
+    color: #e0ffe0; /* Light green accent for focus */
+  }
+  
+  .forget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0 35px 0;
+    color: rgba(255, 255, 255, 0.9); /* Slightly softer white */
+  }
+  
+  .forget label { /* Target label inside forget */
+    display: flex;
+    align-items: center;
+    font-size: 0.90rem; /* Slightly smaller font */
+    cursor: pointer;
+  }
+  
+  .forget label p {
+    margin-left: 8px;
+  }
+  
+  #remember { /* Direct ID selector */
+    accent-color: #90ee90; /* Light green accent for checkbox */
+    margin-right: 5px; /* Add space between checkbox and text */
+  }
+  
+  
+  .wrapper a { /* Target links inside wrapper */
+    color: #b2f2bb; /* Lighter green for links */
+    text-decoration: none;
+  }
+  
+  .wrapper a:hover {
+    text-decoration: underline;
+  }
+  
+  .wrapper button { /* Target button inside wrapper */
+    background-color: #1b4d3e; /* Dark green matching the foliage */
+    color: #ffffff; /* White text */
+    font-weight: 600;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    margin-top: 10px; /* Add some space above button */
+  }
+  
+  .wrapper button:hover {
+    color: #ffffff; /* Keep text white */
+    background: #2a6d4e; /* Slightly lighter green on hover */
+    border-color: rgba(255, 255, 255, 0.7); /* White border on hover */
+  }
+  
+  .register {
+    text-align: center;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.9); /* Slightly softer white */
+  }
+  
+  .register a {
+      color: #b2f2bb; /* Lighter green matching other links */
+      font-weight: 600;
+  }
+  .register a:hover {
+      text-decoration: underline;
+  }

@@ -1,0 +1,146 @@
+/* src/components/CropPricePrediction/CropPricePrediction.css */
+
+/* Copy styles from CropPrediction.css, particularly:
+   - .prediction-form-glass
+   - h2, p.description styles
+   - .input-grid / .input-grid-price (adjust grid-template-columns if needed)
+   - .input-group
+   - .input-group label
+   - .input-group input[type="number"]
+   - .input-group select (NEW - Add styling for select dropdowns)
+   - .predict-button
+   - .status-messages, .loading-message, .error-message, .prediction-result
+*/
+
+/* --- Ensure Variables are Defined (Globally or Here) --- */
+/* :root { ... } */
+
+.price-prediction-container {
+    padding: 1rem 0;
+}
+
+/* --- Glassmorphism Container --- */
+.prediction-form-glass {
+    max-width: 700px; /* Adjust width as desired */
+    margin: 2rem auto;
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    background: var(--modal-bg-color, hsla(210, 30%, 98%, 0.7));
+    box-shadow: var(--modal-shadow, 0 5px 25px 0 hsla(210, 30%, 50%, 0.15));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--modal-border-color, hsla(0, 0%, 100%, 0.5));
+}
+
+.prediction-form-glass h2 {
+    text-align: center;
+    color: var(--title-color);
+    margin-bottom: 0.5rem;
+}
+
+.prediction-form-glass p.description {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.prediction-form-glass p.description small {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--text-color-light, #666);
+}
+
+
+/* --- Input Grid --- */
+/* You can reuse .input-grid or use a specific one like .input-grid-price */
+.input-grid-price {
+    display: grid;
+    /* Adjust columns - maybe 2x2 is good? */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Input Group & Label --- */
+/* .input-group {
+    /* Styles for the container of label + input/select 
+} */
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+    font-size: 0.9rem;
+}
+
+/* --- Input & Select Styling --- */
+.input-group input[type="number"],
+.input-group select {
+    width: 100%;
+    padding: 0.8rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color, #ccc);
+    background-color: var(--container-color, #fff); /* Solid background */
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-family: inherit; /* Ensure select uses the right font */
+}
+
+.input-group input[type="number"]:focus,
+.input-group select:focus {
+     outline: none;
+     border-color: var(--primary-color);
+     box-shadow: 0 0 0 2px hsla(110, 40%, 50%, 0.2); /* Match focus indicator */
+}
+
+/* Optional: Style for disabled option */
+.input-group select option[disabled] {
+    color: #aaa;
+}
+
+
+/* --- Button Styling --- */
+.predict-button {
+    display: block;
+    margin: 0 auto;
+    padding: 0.9rem 2.5rem;
+    font-size: 1rem;
+    font-weight: var(--font-medium);
+    color: #fff;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.predict-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.predict-button:not(:disabled):hover {
+    background-color: var(--primary-color-light);
+}
+
+/* --- Status Message Styling --- */
+.status-messages {
+    min-height: 3rem; /* Reserve some space for messages */
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.loading-message,
+.error-message,
+.prediction-result {
+    /* Shared styles */
+    font-size: 1.05rem;
+    padding: 0.75rem;
+    border-radius: 5px;
+    margin-top: 0; /* Reset top margin if inside wrapper */
+}
+.loading-message { color: var(--text-color); }
+.error-message { color: #d9534f; background-color: #f2dede; border: 1px solid #ebccd1; }
+.prediction-result { color: #3c763d; background-color: #dff0d8; border: 1px solid #d6e9c6; font-weight: normal; /* Keep prediction normal */ }

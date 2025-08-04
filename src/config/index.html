@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Black/Blue Liquid Background with 3D Cards</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic page setup */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center cards horizontally */
+            align-items: center; /* Center cards vertically */
+            gap: 40px; /* Space between the cards */
+            overflow: hidden; /* Hide gradient overflow */
+            position: relative; /* Needed for absolute positioning of pseudo-elements */
+            font-family: sans-serif;
+            color: #fff; /* Default text color for dark background */
+            perspective: 1000px; /* Perspective for the 3D cards */
+            flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+            padding: 40px 20px; /* Add some padding around cards */
+            box-sizing: border-box; /* Include padding in element's total width/height */
+        }
+
+        /* Ensure content within cards doesn't overflow */
+        .card-face {
+            overflow: hidden;
+        }
+
+        /* Basic styling for content within cards */
+        .card-face h2 { margin-top: 0; }
+        .card-face img { max-width: 100%; height: auto; margin-top: 15px; border-radius: 5px; }
+        .card-face p { margin-bottom: 10px; }
+        .card-face a { color: inherit; text-decoration: none; border-bottom: 1px solid; padding-bottom: 2px;}
+         .card-face a:hover { border-bottom-color: transparent;}
+
+    </style>
+</head>
+<body>
+
+    <!-- Animated Background Pseudo-elements are defined in CSS ::before/::after on body -->
+
+    <!-- Card 1 -->
+    <div class="card-container">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-face-front">
+                    <h2>Card One Front</h2>
+                    <p>Details specific to Card One front side.</p>
+                     <img src="https://via.placeholder.com/250x180/FF5733/FFFFFF?text=Concept+A" alt="Concept A Thumbnail">
+                    <p style="margin-top: 10px;">Hover to reveal more!</p>
+                </div>
+                <div class="card-face card-face-back">
+                    <h2>Card One Back</h2>
+                    <p>Further information about Card One.</p>
+                    <p>This is the exciting back content!</p>
+                     <img src="https://via.placeholder.com/250x180/33FF57/FFFFFF?text=Info+A" alt="Information A Graphic">
+                    <p style="margin-top: 10px;"><a href="#">Link for Card One</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card-container">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-face-front">
+                    <h2>Card Two Front</h2>
+                    <p>Card Two offers something different.</p>
+                    <img src="https://via.placeholder.com/250x180/337BFF/FFFFFF?text=Concept+B" alt="Concept B Thumbnail">
+                    <p style="margin-top: 10px;">Discover the back!</p>
+                </div>
+                <div class="card-face card-face-back">
+                    <h2>Card Two Back</h2>
+                    <p>Dive deeper into Card Two's details.</p>
+                    <p>More features and benefits here.</p>
+                     <img src="https://via.placeholder.com/250x180/FF33A1/FFFFFF?text=Info+B" alt="Information B Graphic">
+                     <p style="margin-top: 10px;"><a href="#">Link for Card Two</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card-container">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-face-front">
+                    <h2>Card Three Front</h2>
+                    <p>Exploring possibilities with Card Three.</p>
+                    <img src="https://via.placeholder.com/250x180/A133FF/FFFFFF?text=Concept+C" alt="Concept C Thumbnail">
+                    <p style="margin-top: 10px;">Flip me!</p>
+                </div>
+                <div class="card-face card-face-back">
+                    <h2>Card Three Back</h2>
+                    <p>Concluding thoughts on Card Three.</p>
+                    <p>Final call to action!</p>
+                    <img src="https://via.placeholder.com/250x180/33FFA1/FFFFFF?text=Info+C" alt="Information C Graphic">
+                    <p style="margin-top: 10px;"><a href="#">Link for Card Three</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

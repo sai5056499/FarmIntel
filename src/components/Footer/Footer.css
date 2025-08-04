@@ -1,0 +1,87 @@
+/* src/components/Footer/Footer.css */
+
+/* Assuming variables defined globally */
+
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding-top: 3rem;
+    font-size: var(--small-font-size);
+}
+
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Match container padding */
+    display: grid;
+    gap: 2rem;
+    /* Responsive grid: 1 col mobile, 2 medium, 4 desktop */
+    grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 576px) {
+    .footer-container { grid-template-columns: repeat(2, 1fr); }
+}
+@media screen and (min-width: 992px) {
+    .footer-container { grid-template-columns: repeat(4, 1fr); }
+    .footer-about { grid-column: span 1; } /* Adjust span if needed */
+}
+
+
+.footer-section {
+    margin-bottom: 1rem;
+}
+
+.footer-title {
+    font-family: var(--heading-font);
+    font-size: 1.1rem;
+    color: var(--white-color);
+    margin-bottom: 1rem;
+    font-weight: var(--font-medium);
+}
+
+.footer-about p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-section a {
+    color: var(--footer-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--white-color);
+    text-decoration: underline;
+}
+
+.footer-social a {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-right: 1rem;
+    color: var(--footer-text);
+}
+.footer-social a:hover {
+    color: var(--primary-green); /* Or accent color */
+    text-decoration: none;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid hsla(210, 15%, 35%, 0.5); /* Subtle separator */
+    font-size: 0.8rem;
+    color: var(--text-color-light);
+}

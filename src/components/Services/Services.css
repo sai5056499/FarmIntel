@@ -1,0 +1,140 @@
+/* src/components/Services/Services.css */
+
+/* Optional: Define variables locally if not global */
+/* :root { ... } */
+
+/* Container and Header Styling */
+.services-container {
+    /* max-width: 1200px; */ /* Handled by global .container class */
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    /* padding: 1rem 1.5rem; */ /* Handled by global .container class */
+}
+
+/* Styles for text directly on the background image */
+.page-title-on-bg {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--white-color); /* White text */
+    margin-bottom: 1rem;
+    font-weight: var(--font-semi-bold);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add shadow for readability */
+}
+
+.page-subtitle-on-bg {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 3.5rem auto;
+    line-height: 1.7;
+    color: hsla(0, 0%, 100%, 0.9); /* Slightly off-white */
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Add shadow for readability */
+}
+
+
+/* Services Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+}
+@media screen and (min-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+
+/* --- Service Card Styling --- */
+/* Styles apply to .service-card.glass-box */
+.service-card {
+    /* Remove background, border, shadow - handled by .glass-box */
+    /* background-color: var(--container-color); */
+    /* border: 1px solid var(--border-color); */
+    /* box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.07); */
+
+    /* Keep padding and flex layout */
+    padding: 2rem 1.5rem;
+    border-radius: 12px; /* Match .glass-box if you changed it */
+    transition: transform 0.3s ease; /* Keep hover effect */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: var(--title-color); /* Ensure text color is dark */
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    /* Optional: slightly enhance shadow on hover if needed */
+    /* box-shadow: 0 8px 25px hsla(0, 0%, 0%, 0.12); */
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--primary-green); /* Use a vibrant color */
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.service-card h2 {
+    font-size: 1.5rem;
+    color: var(--title-color); /* Dark text */
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.service-card h3 {
+    font-size: 1.1rem;
+    color: var(--primary-green); /* Keep accent for sub-headline */
+    font-weight: var(--font-medium);
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.service-card p {
+    line-height: 1.65;
+    color: var(--text-color); /* Dark text */
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.service-card h4 {
+    font-size: 1rem;
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+    margin-bottom: 0.75rem;
+    margin-top: 1rem;
+    border-top: 1px solid hsla(0, 0%, 0%, 0.1); /* Subtle border inside card */
+    padding-top: 1rem;
+}
+
+.service-card ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    color: var(--text-color);
+    flex-grow: 1;
+}
+
+.service-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    position: relative;
+    list-style-type: none;
+}
+
+.service-card li::before {
+    content: '✓';
+    position: absolute;
+    left: -1.5rem;
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+/* Button uses global .cta-button style */
+.service-link-button {
+   margin-top: auto;
+   align-self: center;
+}

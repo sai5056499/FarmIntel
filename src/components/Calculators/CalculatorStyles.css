@@ -1,0 +1,182 @@
+/* src/components/Calculators/CalculatorStyles.css */
+
+/* Assuming variables like --primary-color, --title-color, --text-color, --container-color, --border-color, --body-font etc. are defined globally (e.g., in index.css) or uncomment the :root section below */
+
+
+:root {
+    --primary-color: hsl(110, 40%, 50%); /* Example Green */
+    --primary-color-light: hsl(110, 40%, 60%);
+    --title-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 55%);
+    --container-color: #fff;
+    --border-color: hsl(0, 0%, 85%); /* Lighter border */
+    --body-font: "Poppins", sans-serif;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+}
+*/
+
+.calculator-card {
+    background-color: var(--container-color, #fff);
+    border: 1px solid var(--border-color, #e0e0e0);
+    border-radius: 8px;
+    padding: 1.5rem 1.25rem; /* Adjust padding slightly */
+    box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+    height: 100%; /* Ensure cards in grid align if heights vary */
+}
+
+.calculator-card:hover {
+    box-shadow: 0 6px 16px hsla(0, 0%, 0%, 0.08);
+}
+
+.calculator-card h3 {
+    font-size: 1.2rem; /* Slightly smaller */
+    color: var(--primary-color, #3f72af);
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: var(--font-semi-bold, 600);
+}
+
+.calculator-card p:first-of-type { /* The description paragraph */
+    font-size: 0.85rem; /* Slightly smaller */
+    color: var(--text-color, #555);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    min-height: 2.5em; /* Reserve space */
+    line-height: 1.5;
+}
+
+.calc-input-group {
+    margin-bottom: 1rem;
+}
+
+.calc-input-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem; /* Smaller label */
+    font-weight: var(--font-medium, 500);
+    color: var(--title-color, #333);
+    text-transform: uppercase; /* Optional: Style label */
+    letter-spacing: 0.5px;
+}
+
+.calc-input-group input[type="number"],
+.calc-input-group select {
+    width: 100%;
+    padding: 0.75rem; /* Consistent padding */
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    font-size: 0.9rem; /* Smaller input text */
+    box-sizing: border-box; /* Include padding in width */
+    background-color: #fff; /* Ensure background is white */
+}
+
+.calc-input-group input[type="number"]:focus,
+.calc-input-group select:focus {
+     outline: none;
+     border-color: var(--primary-color);
+     box-shadow: 0 0 0 2px hsla(110, 40%, 50%, 0.15);
+}
+
+/* For input with unit dropdown */
+.input-with-unit {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center; /* Align items vertically */
+}
+.input-with-unit input[type="number"] {
+    flex-grow: 1;
+}
+.input-with-unit select {
+    width: auto;
+    flex-shrink: 0;
+    padding: 0.7rem 0.5rem; /* Adjust padding for select */
+}
+
+/* For fertilizer specific layout */
+.nutrient-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Adjust minmax */
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+
+.calc-result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-top: 1px solid var(--border-color, #eee);
+    background-color: hsl(210, 30%, 97%); /* Light background for result */
+    border-radius: 0 0 8px 8px; /* Round bottom corners */
+    margin-left: -1.25rem; /* Extend background to card edges */
+    margin-right: -1.25rem;
+    margin-bottom: -1.5rem; /* Extend background to card edges */
+    text-align: center;
+    flex-grow: 1; /* Allow result area to grow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center result content vertically */
+}
+
+.calc-result h4 {
+    font-size: 0.85rem;
+    color: var(--text-color, #555);
+    margin-bottom: 0.75rem; /* More space */
+    font-weight: var(--font-medium, 500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calc-result p {
+    font-size: 1rem; /* Base size for result text */
+    color: var(--title-color, #333);
+    margin-bottom: 0.5rem; /* Space between result lines */
+    line-height: 1.4;
+}
+.calc-result p span {
+    font-weight: var(--font-semi-bold, 600);
+    font-size: 1.4rem; /* Larger result number */
+    color: var(--primary-color, #3f72af);
+    display: inline-block; /* Allows margin */
+    margin: 0 0.25rem; /* Tiny space around number */
+}
+.calc-result p:last-child {
+    margin-bottom: 0;
+}
+
+.calc-error {
+    color: #d9534f; /* Red */
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: var(--font-medium, 500);
+    padding: 0.5rem;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    border-radius: 4px;
+}
+
+/* Placeholder styling */
+.calculator-card.placeholder {
+    opacity: 0.7;
+    background-color: #f8f9fa;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-style: dashed; /* Indicate it's a placeholder */
+}
+.calculator-card.placeholder h3 {
+     color: #6c757d;
+     margin-bottom: 0.5rem;
+}
+ .calculator-card.placeholder p {
+     color: #6c757d;
+     min-height: 0;
+     font-style: italic;
+     font-size: 0.9rem;
+     margin-bottom: 0;
+}

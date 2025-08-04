@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmIntel Project</title>
+    <link rel="stylesheet" href="style.css"> <!-- Optional: add style.css in /docs -->
+</head>
+<body>
+    <header>
+        <h1>FarmIntel: Intelligent Farming Solutions</h1>
+        <p>Your guide to optimal crop recommendation and more.</p>
+    </header>
+
+    <nav>
+        <a href="https://github.com/sai5056499/FarmIntel">View Project on GitHub</a>
+        <!-- Add links to other pages in /docs if needed -->
+    </nav>
+
+    <main>
+        <section id="overview">
+            <h2>Project Overview</h2>
+            <p>FarmIntel is a machine learning project aimed at providing intelligent recommendations for farmers, starting with crop recommendation based on soil and weather conditions.</p>
+            <p>This project utilizes data analysis and predictive modeling to help farmers make informed decisions.</p>
+        </section>
+
+        <section id="features">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Crop Recommendation based on environmental factors.</li>
+                <li>(Mention other features if your app has them)</li>
+            </ul>
+        </section>
+
+        <section id="how-it-works">
+            <h2>How It Works</h2>
+            <p>The project uses a machine learning model trained on diverse agricultural data. Input factors like N, P, K ratios, temperature, humidity, pH, and rainfall are fed into the model to predict the most suitable crop.</p>
+            <!-- Optionally describe the model file (.pkl) and data file (.csv) -->
+        </section>
+
+        <section id="data">
+            <h2>Dataset</h2>
+            <p>The model was trained on the <code>Crop_recommendation.csv</code> dataset. It contains various environmental parameters and the corresponding recommended crop.</p>
+            <!-- Maybe include a small table or a plot summarizing data -->
+            <img src="images/data_distribution_plot.png" alt="Data Distribution Plot"> <!-- Example plot -->
+        </section>
+
+        <section id="model">
+             <h2>Model</h2>
+             <p>A [Mention your model type, e.g., Random Forest Classifier] model was trained and saved as <code>model.pkl</code>.</p>
+             <!-- Mention model performance metrics -->
+             <p>Model Accuracy: [Your Accuracy]%</p>
+             <p>F1-Score: [Your F1-Score]</p>
+        </section>
+
+
+        <section id="demo">
+            <h2>Application Demo</h2>
+            <p>Here's a look at the web application in action:</p>
+            <img src="images/app_screenshot_1.png" alt="App Screenshot 1" style="max-width: 100%;">
+            <img src="images/app_screenshot_2.png" alt="App Screenshot 2" style="max-width: 100%;">
+            <!-- Or embed a short video if you make one -->
+            <!-- <video width="640" height="360" controls><source src="images/app_demo.mp4" type="video/mp4"></video> -->
+        </section>
+
+        <section id="run-locally">
+            <h2>How to Run Locally</h2>
+            <p>To run the FarmIntel application on your own machine:</p>
+            <ol>
+                <li>Clone the repository: <code>git clone https://github.com/sai5056499/FarmIntel.git</code></li>
+                <li>Navigate to the project directory: <code>cd FarmIntel</code></li>
+                <li>(Optional but Recommended) Create a virtual environment: <code>python -m venv venv</code></li>
+                <li>Activate the virtual environment:
+                    <ul>
+                        <li>Windows: <code>.\venv\Scripts\activate</code></li>
+                        <li>macOS/Linux: <code>source venv/bin/activate</code></li>
+                    </ul>
+                </li>
+                <li>Install dependencies: <code>pip install -r requirements.txt</code> (Make sure you have a requirements.txt!)</li>
+                <li>Navigate to the app folder: <code>cd app</code></li>
+                <li>Run the Flask application: <code>python app.py</code></li>
+                <li>Open your web browser and go to the address shown in the terminal (usually <code>http://127.0.0.1:5000/</code>).</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 FarmIntel Project</p>
+    </footer>
+</body>
+</html>
